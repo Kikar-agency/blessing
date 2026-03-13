@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blessing Hogar — Sommiers, Colchones y Muebles</title>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','PIXEL_ID_AQUI');fbq('track','PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink:       #141414;
+  --ink2:      #1E1E1E;
+  --ink3:      #2A2A2A;
+  --surface:   #F7F5F2;
+  --surface2:  #EFECE8;
+  --white:     #FFFFFF;
+  --chalk:     #F2EFE9;
+  --sage:      #8A9E8C;
+  --sage-pale: #E8EDE8;
+  --terracota: #C8724A;
+  --terra-pale:#F8EDE7;
+  --gold:      #C9A96E;
+  --gold-pale: #F5EDD8;
+  --naranja:   #E8621A;
+  --text-main: #141414;
+  --text-mid:  #555555;
+  --text-soft: #909090;
+  --r:         12px;
+  --r-lg:      20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--surface);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+
+/* ─── ANNOUNCE ─── */
+.announce {
+  background: var(--ink);
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12.5px;
+  letter-spacing: .4px;
+}
+.announce strong { color: var(--gold); font-weight: 600; }
+
+/* ─── HEADER ─── */
+header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(247,245,242,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+.hdr {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center;
+  padding: 0 40px; height: 68px; gap: 32px;
+}
+.logo { text-decoration: none; display: flex; align-items: baseline; gap: 5px; flex-shrink: 0; }
+.logo-b {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  color: var(--ink); letter-spacing: -.5px;
+}
+.logo-h {
+  font-size: 10px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--text-soft);
+}
+.hdr-nav { display: flex; gap: 2px; margin-left: auto; }
+.hdr-nav a {
+  font-size: 13.5px; font-weight: 400; color: var(--text-mid);
+  text-decoration: none; padding: 7px 14px; border-radius: 8px;
+  letter-spacing: .15px;
+  transition: all .18s;
+}
+.hdr-nav a:hover { color: var(--ink); background: rgba(0,0,0,.05); }
+.hdr-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.btn-naranja {
+  background: var(--naranja); color: #fff;
+  font-size: 12px; font-weight: 600; letter-spacing: .3px;
+  padding: 8px 16px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+  transition: filter .2s, transform .2s;
+}
+.btn-naranja:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.icon-btn {
+  width: 38px; height: 38px;
+  background: transparent; border: 1px solid rgba(0,0,0,.12);
+  border-radius: 9px; display: flex; align-items: center;
+  justify-content: center; cursor: pointer; position: relative;
+  font-size: 16px; transition: border-color .18s, background .18s;
+}
+.icon-btn:hover { background: rgba(0,0,0,.04); border-color: rgba(0,0,0,.2); }
+.cart-dot {
+  position: absolute; top: -4px; right: -4px;
+  width: 17px; height: 17px; background: var(--naranja);
+  border-radius: 50%; font-size: 9px; font-weight: 700;
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--surface);
+}
+.burger { display: none; flex-direction: column; gap: 4.5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: all .3s; }
+
+/* ─── MOBILE DRAWER ─── */
+.drawer-overlay {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,.45); backdrop-filter: blur(4px);
+}
+.drawer-overlay.open { display: flex; }
+.drawer {
+  background: var(--white); width: min(300px, 82vw);
+  height: 100%; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 4px;
+  animation: drawerIn .28s ease;
+  overflow-y: auto;
+}
+@keyframes drawerIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+.drawer-close { align-self: flex-end; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-mid); margin-bottom: 12px; }
+.drawer a {
+  display: block; padding: 13px 14px; border-radius: 9px;
+  text-decoration: none; color: var(--text-main); font-size: 15px; font-weight: 400;
+  transition: background .15s;
+}
+.drawer a:hover { background: var(--surface2); }
+.drawer-sep { height: 1px; background: var(--surface2); margin: 8px 0; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: calc(100svh - 68px - 42px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 40px;
+  gap: 0;
+  align-items: stretch;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 60px 80px 0;
+  border-right: 1px solid rgba(0,0,0,.08);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--terracota);
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--terracota);
+}
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 300; line-height: 1.08;
+  color: var(--ink); letter-spacing: -.5px;
+  margin-bottom: 28px;
+}
+.hero-h1 em { font-style: italic; color: var(--terracota); }
+.hero-h1 strong { font-weight: 600; }
+.hero-sub {
+  font-size: 15px; font-weight: 300; color: var(--text-mid);
+  line-height: 1.7; max-width: 380px; margin-bottom: 40px;
+}
+.hero-cta-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn-dark {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: #fff;
+  font-size: 14px; font-weight: 500; letter-spacing: .2px;
+  padding: 15px 28px; border-radius: 10px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.btn-dark:hover { background: var(--ink3); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--ink);
+  font-size: 14px; font-weight: 400;
+  border: 1px solid rgba(0,0,0,.18);
+  padding: 14px 22px; border-radius: 10px;
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.btn-outline:hover { border-color: var(--ink); background: rgba(0,0,0,.03); }
+.hero-stats {
+  display: flex; gap: 32px;
+  margin-top: 52px; padding-top: 36px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.hero-stat .n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 600; line-height: 1; color: var(--ink);
+}
+.hero-stat .l { font-size: 12px; color: var(--text-soft); margin-top: 4px; line-height: 1.4; }
+
+.hero-right {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 0;
+  padding: 40px 0 40px 40px;
+  position: relative;
+}
+.hero-main-img {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--ink2);
+  position: relative;
+  min-height: 400px;
+  display: flex; align-items: center; justify-content: center;
+}
+/* CSS room scene */
+.room-scene {
+  width: 100%; height: 100%;
+  min-height: 400px;
+  position: relative;
+  background: linear-gradient(180deg,#2C2420 0%,#3D2E28 35%,#8B7355 60%,#C4A882 100%);
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden;
+}
+.room-scene::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.4));
+}
+.room-sofa {
+  font-size: 90px;
+  margin-bottom: 8%;
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.hero-tag-float {
+  position: absolute; top: 24px; right: 24px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px; padding: 14px 18px;
+  color: #fff; z-index: 2;
+}
+.hero-tag-float .t1 { font-size: 11px; opacity: .7; letter-spacing: 1px; text-transform: uppercase; }
+.hero-tag-float .t2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; line-height: 1; margin-top: 4px;
+}
+.hero-tag-float .t3 { font-size: 12px; opacity: .75; margin-top: 3px; }
+
+.hero-pills {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 16px;
+}
+.hero-pill {
+  background: var(--white); border-radius: 10px;
+  padding: 10px 16px; font-size: 12.5px; font-weight: 500;
+  color: var(--text-main); display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  flex: 1; min-width: 0;
+}
+.hero-pill .pi { font-size: 18px; }
+
+/* ─── NARANJA STRIP ─── */
+.naranja-strip {
+  background: var(--ink);
+  padding: 22px 40px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; flex-wrap: wrap;
+}
+.nstrip-logo {
+  font-size: 13px; font-weight: 800;
+  color: var(--naranja); letter-spacing: -.5px;
+  border: 2px solid var(--naranja);
+  padding: 5px 10px; border-radius: 6px; flex-shrink: 0;
+}
+.nstrip-text { color: rgba(255,255,255,.9); font-size: 14px; font-weight: 400; }
+.nstrip-text strong { color: var(--gold); font-weight: 600; }
+.nstrip-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.nchip {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.8); font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 6px; white-space: nowrap;
+}
+.nchip.active { background: var(--naranja); border-color: var(--naranja); color: #fff; }
+
+/* ─── TRUST ROW ─── */
+.trust-row {
+  border-bottom: 1px solid rgba(0,0,0,.07);
+  background: var(--white);
+  padding: 0 40px;
+}
+.trust-row-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; justify-content: center;
+  gap: 0;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 18px 32px;
+  border-right: 1px solid rgba(0,0,0,.07);
+  font-size: 13px; color: var(--text-mid);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item .ti { font-size: 20px; }
+
+/* ─── SECTION BASE ─── */
+.sec { padding: 88px 40px; }
+.sec-inner { max-width: 1280px; margin: 0 auto; }
+.sec-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--terracota);
+  margin-bottom: 16px;
+}
+.sec-label::before { content: '—'; }
+.sec-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 300; line-height: 1.15; color: var(--ink);
+  margin-bottom: 12px;
+}
+.sec-h2 em { font-style: italic; }
+.sec-sub { font-size: 15px; font-weight: 300; color: var(--text-mid); max-width: 440px; line-height: 1.65; }
+
+/* ─── CATEGORIES ─── */
+.cats-sec { background: var(--surface); }
+.cats-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+.link-arrow { font-size: 13px; color: var(--text-mid); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: gap .2s, color .2s; }
+.link-arrow:hover { color: var(--ink); gap: 8px; }
+
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.cat-card {
+  border-radius: var(--r-lg); overflow: hidden;
+  aspect-ratio: .8;
+  position: relative; cursor: pointer; text-decoration: none;
+  display: block;
+  transition: transform .32s cubic-bezier(.25,.46,.45,.94);
+}
+.cat-card:hover { transform: translateY(-6px); }
+.cat-bg {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px;
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+.cat-card:hover .cat-bg { transform: scale(1.06); }
+.cat-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 36px 16px 16px;
+  background: linear-gradient(0deg, rgba(10,8,6,.75) 0%, transparent 100%);
+  color: #fff;
+}
+.cat-info strong { display: block; font-size: 15px; font-weight: 500; }
+.cat-info span { font-size: 11.5px; opacity: .65; margin-top: 2px; display: block; }
+
+/* ─── PRODUCTS ─── */
+.prods-sec { background: var(--surface2); }
+.prods-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; flex-wrap: wrap; gap: 16px; }
+.prods-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-pill {
+  font-size: 12.5px; font-weight: 400; color: var(--text-mid);
+  border: 1px solid rgba(0,0,0,.12); border-radius: 20px;
+  padding: 6px 16px; cursor: pointer; background: transparent;
+  transition: all .15s;
+}
+.filter-pill.active, .filter-pill:hover {
+  background: var(--ink); color: #fff; border-color: var(--ink);
+}
+
+.prods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 18px;
+}
+.prod-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .28s cubic-bezier(.25,.46,.45,.94), box-shadow .28s;
+  cursor: pointer;
+}
+.prod-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.12); }
+.prod-img {
+  aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 68px;
+  position: relative; overflow: hidden;
+}
+.prod-img-inner { transition: transform .5s; }
+.prod-card:hover .prod-img-inner { transform: scale(1.07); }
+.badge {
+  position: absolute; top: 14px; left: 14px;
+  font-size: 10px; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 6px;
+}
+.badge-naranja { background: var(--naranja); color: #fff; }
+.badge-nuevo { background: var(--ink); color: #fff; }
+.badge-top { background: var(--gold); color: var(--ink); }
+.badge-off { background: var(--sage); color: #fff; }
+
+.prod-body { padding: 18px 20px 22px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.prod-name { font-size: 15px; font-weight: 500; line-height: 1.35; color: var(--ink); }
+.prod-cat { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); }
+
+/* Cuotas Naranja block — the key selling element */
+.cuotas {
+  border-radius: 10px;
+  border: 1.5px solid #F0C0A8;
+  background: linear-gradient(135deg, #FEF3ED, #FDE8DA);
+  padding: 11px 14px;
+  display: flex; align-items: center; gap: 11px;
+}
+.cuotas-badge {
+  background: var(--naranja); color: #fff;
+  font-size: 9.5px; font-weight: 800; letter-spacing: .5px;
+  text-transform: uppercase; padding: 4px 7px; border-radius: 5px;
+  flex-shrink: 0; line-height: 1.2; text-align: center;
+}
+.cuotas-num {
+  font-size: 18px; font-weight: 700; color: var(--naranja); line-height: 1;
+}
+.cuotas-desc { font-size: 11px; color: #C8724A; margin-top: 2px; }
+
+.price-row { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+.price { font-size: 21px; font-weight: 600; color: var(--ink); }
+.price-was { font-size: 13px; color: var(--text-soft); text-decoration: line-through; }
+.disc {
+  font-size: 11px; font-weight: 700; color: var(--white);
+  background: var(--sage); padding: 2px 8px; border-radius: 5px;
+}
+.transf-price {
+  font-size: 12px; font-weight: 500; color: #2E7D5B;
+  background: #E6F4EE; padding: 5px 11px; border-radius: 7px;
+  display: inline-flex; align-items: center; gap: 5px;
+  width: fit-content;
+}
+
+.btn-add {
+  margin-top: auto;
+  background: var(--ink); color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px; font-weight: 500;
+  border: none; border-radius: 9px;
+  padding: 13px 20px; cursor: pointer; width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  letter-spacing: .1px;
+  transition: background .18s, transform .18s;
+}
+.btn-add:hover { background: #333; transform: translateY(-1px); }
+.btn-add.added { background: var(--sage); }
+
+/* ─── NARANJA FEATURE SECTION ─── */
+.naranja-sec {
+  background: var(--ink);
+  padding: 88px 40px;
+  position: relative; overflow: hidden;
+}
+.naranja-sec::before {
+  content: 'NARANJA';
+  position: absolute;
+  right: -40px; top: 50%; transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 200px; font-weight: 600;
+  color: rgba(255,255,255,.03); pointer-events: none;
+  line-height: 1; letter-spacing: -5px;
+}
+.naranja-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  position: relative; z-index: 1;
+}
+.naranja-content .sec-label { color: var(--naranja); }
+.naranja-content .sec-label::before { color: var(--naranja); }
+.naranja-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300; color: #fff; line-height: 1.15;
+  margin-bottom: 20px;
+}
+.naranja-h em { font-style: italic; color: var(--gold); }
+.naranja-p { font-size: 15px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 36px; }
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--ink);
+  font-size: 14px; font-weight: 600;
+  padding: 15px 30px; border-radius: 10px;
+  text-decoration: none;
+  transition: filter .2s, transform .2s;
+}
+.btn-gold:hover { filter: brightness(1.08); transform: translateY(-2px); }
+
+.cuotas-cards {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cuota-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px; padding: 24px;
+  text-align: center; color: #fff;
+  transition: background .2s, border-color .2s;
+}
+.cuota-card:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); }
+.cuota-card.highlight {
+  background: var(--naranja);
+  border-color: var(--naranja);
+}
+.cuota-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 600; line-height: 1;
+}
+.cuota-label { font-size: 12px; opacity: .75; margin-top: 6px; }
+.cuota-card.highlight .cuota-label { opacity: 1; font-weight: 600; }
+
+/* ─── TESTIMONIALS ─── */
+.test-sec { background: var(--surface); }
+.test-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+.test-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  position: relative; overflow: hidden;
+}
+.test-card::after {
+  content: '\201C';
+  position: absolute; bottom: -20px; right: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 120px; color: var(--surface2);
+  line-height: 1; pointer-events: none;
+}
+.test-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
+.test-text { font-size: 14.5px; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; position: relative; z-index: 1; }
+.test-footer { display: flex; align-items: center; gap: 13px; }
+.test-av {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--surface2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 600; color: var(--text-mid);
+  flex-shrink: 0;
+}
+.test-av.a { background: var(--terra-pale); color: var(--terracota); }
+.test-av.b { background: var(--sage-pale); color: var(--sage); }
+.test-av.c { background: var(--gold-pale); color: #8B6914; }
+.test-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+.test-meta { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+.test-prod-tag {
+  display: inline-block; margin-top: 4px;
+  font-size: 11px; font-weight: 500; color: var(--terracota);
+  background: var(--terra-pale); padding: 2px 8px; border-radius: 4px;
+}
+
+/* ─── GARANTIAS ─── */
+.garantias-sec { background: var(--white); padding: 70px 40px; }
+.garantias-grid {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.garantia {
+  padding: 36px 32px;
+  border-right: 1px solid rgba(0,0,0,.07);
+  transition: background .2s;
+}
+.garantia:last-child { border-right: none; }
+.garantia:hover { background: var(--surface); }
+.gar-icon {
+  font-size: 28px; margin-bottom: 16px;
+  display: block;
+}
+.gar-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.gar-desc { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,.65);
+  padding: 64px 40px 28px;
+}
+.foot-grid {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px; margin-bottom: 52px;
+}
+.foot-brand .logo-b { color: #fff; }
+.foot-brand p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.5); margin-top: 14px; line-height: 1.65; max-width: 240px; }
+.foot-brand .soc { display: flex; gap: 10px; margin-top: 22px; }
+.soc-btn {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.08); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; text-decoration: none; color: rgba(255,255,255,.7);
+  transition: background .2s;
+}
+.soc-btn:hover { background: var(--gold); color: var(--ink); }
+footer h5 {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.35);
+  margin-bottom: 20px;
+}
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+footer ul li a {
+  font-size: 13.5px; font-weight: 300;
+  color: rgba(255,255,255,.6); text-decoration: none;
+  transition: color .18s;
+}
+footer ul li a:hover { color: var(--gold); }
+.foot-contact li { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.55); display: flex; align-items: flex-start; gap: 9px; margin-bottom: 10px; }
+.foot-contact li span { flex-shrink: 0; }
+.foot-bottom {
+  max-width: 1280px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  font-size: 12px; color: rgba(255,255,255,.3);
+}
+.pay-methods { display: flex; gap: 8px; flex-wrap: wrap; }
+.pay-tag {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.5);
+  font-size: 10.5px; font-weight: 600; letter-spacing: .5px;
+  padding: 4px 10px; border-radius: 5px;
+}
+
+/* ─── WA FLOAT ─── */
+.wa {
+  position: fixed; bottom: 26px; right: 26px; z-index: 998;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; text-decoration: none;
+  box-shadow: 0 4px 18px rgba(37,211,102,.4);
+  transition: transform .25s, box-shadow .25s;
+}
+.wa:hover { transform: scale(1.1); box-shadow: 0 8px 24px rgba(37,211,102,.5); }
+.wa::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.5);
+  animation: wa-ping 2s ease infinite;
+}
+@keyframes wa-ping {
+  0% { transform: scale(1); opacity: .7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+.reveal.d4 { transition-delay: .32s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hdr { padding: 0 24px; }
+  .hdr-nav { display: none; }
+  .burger { display: flex; }
+  .hero { grid-template-columns: 1fr; padding: 0 24px; }
+  .hero-left { border-right: none; border-bottom: 1px solid rgba(0,0,0,.07); padding: 56px 0 48px; }
+  .hero-right { padding: 32px 0; }
+  .hero-main-img { min-height: 300px; }
+  .cats-grid { grid-template-columns: repeat(3, 1fr); }
+  .naranja-inner { grid-template-columns: 1fr; gap: 40px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .garantias-grid { grid-template-columns: 1fr 1fr; }
+  .garantia { border-right: none; border-bottom: 1px solid rgba(0,0,0,.07); }
+  .garantia:nth-child(2n) { }
+}
+@media (max-width: 768px) {
+  .sec { padding: 60px 20px; }
+  .naranja-sec { padding: 60px 20px; }
+  .garantias-sec { padding: 48px 20px; }
+  .trust-row { padding: 0 20px; }
+  .trust-row-inner { flex-wrap: wrap; gap: 0; }
+  .trust-item { padding: 14px 16px; border-right: none; border-bottom: 1px solid rgba(0,0,0,.07); width: 50%; }
+  .naranja-strip { padding: 16px 20px; gap: 12px; }
+  footer { padding: 48px 20px 24px; }
+  .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .hdr { height: 58px; padding: 0 18px; }
+  .hero { padding: 0 18px; }
+  .hero-left { padding: 44px 0 40px; }
+  .hero-stats { gap: 24px; }
+  .hero-pills { flex-direction: column; }
+  .cats-grid { grid-template-columns: repeat(2, 1fr); }
+  .prods-grid { grid-template-columns: 1fr; }
+  .cuotas-cards { grid-template-columns: 1fr 1fr; }
+  .test-grid { grid-template-columns: 1fr; }
+  .garantias-grid { grid-template-columns: 1fr; }
+  .garantia { border-right: none; }
+  .nstrip-chips { gap: 6px; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  Envío gratis · <strong>12 cuotas sin interés con Tarjeta Naranja</strong> · 50% OFF con transferencia
+</div>
+
+<header>
+  <div class="hdr">
+    <a href="#" class="logo">
+      <span class="logo-b">Blessing</span>
+      <span class="logo-h">Hogar</span>
+    </a>
+
+    <nav class="hdr-nav">
+      <a href="#">Sommiers</a>
+      <a href="#">Colchones</a>
+      <a href="#">Respaldos</a>
+      <a href="#">Sofás & Living</a>
+      <a href="#">Ofertas</a>
+    </nav>
+
+    <div class="hdr-actions">
+      <a href="#naranja-sec" class="btn-naranja">🟠 12 cuotas Naranja</a>
+      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Carrito" onclick="BlessingCart.openCart()">
+        🛒 <span class="cart-dot" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay">
+  <div class="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <a href="#">🛏️&nbsp; Sommiers</a>
+    <a href="#">😴&nbsp; Colchones</a>
+    <a href="#">🪑&nbsp; Respaldos</a>
+    <a href="#">🛋️&nbsp; Sofás & Living</a>
+    <a href="#">🏷️&nbsp; Ofertas</a>
+    <div class="drawer-sep"></div>
+    <a href="#naranja-sec" style="color:var(--naranja);font-weight:600;">🟠 12 cuotas con Naranja</a>
+    <a href="https://wa.me/5493516420999" target="_blank" style="font-weight:600;">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left reveal">
+    <div class="hero-eyebrow">Producción propia · Córdoba</div>
+    <h1 class="hero-h1">
+      El descanso<br>que merecés,<br><em>al precio</em> <strong>justo</strong>
+    </h1>
+    <p class="hero-sub">Sommiers, colchones y muebles con calidad de fábrica. Sin intermediarios, con la mejor financiación del mercado.</p>
+    <div class="hero-cta-row">
+      <a href="#productos" class="btn-dark">Explorar productos &rarr;</a>
+      <a href="#naranja-sec" class="btn-outline">Ver cuotas Naranja</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">+5K</div><div class="l">clientes<br>satisfechos</div></div>
+      <div class="hero-stat"><div class="n">100%</div><div class="l">producción<br>propia</div></div>
+      <div class="hero-stat"><div class="n">5 ★</div><div class="l">en Mercado<br>Libre</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right reveal d1">
+    <div class="hero-main-img">
+      <div class="room-scene">
+        <div class="room-sofa">🛋️</div>
+        <div class="hero-tag-float">
+          <div class="t1">Destaque</div>
+          <div class="t2">Sommier Coral</div>
+          <div class="t3">12x $81.480 · Naranja</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-pills">
+      <div class="hero-pill"><span class="pi">🚚</span> Envío gratis</div>
+      <div class="hero-pill"><span class="pi">🔄</span> Cambio 30 días</div>
+      <div class="hero-pill"><span class="pi">🏭</span> Fabricación propia</div>
+    </div>
+  </div>
+</div>
+
+<!-- NARANJA STRIP -->
+<div class="naranja-strip">
+  <div class="nstrip-logo">NARANJA</div>
+  <span class="nstrip-text">Financiación exclusiva Blessing Hogar — <strong>hasta 12 cuotas sin interés</strong></span>
+  <div class="nstrip-chips">
+    <span class="nchip">3 cuotas</span>
+    <span class="nchip">6 cuotas</span>
+    <span class="nchip">9 cuotas</span>
+    <span class="nchip active">12 cuotas ★</span>
+  </div>
+</div>
+
+<!-- TRUST ROW -->
+<div class="trust-row">
+  <div class="trust-row-inner">
+    <div class="trust-item"><span class="ti">🚚</span> Envío gratis a todo el país</div>
+    <div class="trust-item"><span class="ti">🏭</span> Fabricación propia en Córdoba</div>
+    <div class="trust-item"><span class="ti">🔄</span> Cambio en 30 días</div>
+    <div class="trust-item"><span class="ti">💳</span> 6 cuotas s/interés todas las tarjetas</div>
+    <div class="trust-item"><span class="ti">💬</span> Atención por WhatsApp</div>
+  </div>
+</div>
+
+<!-- CATEGORÍAS -->
+<section class="sec cats-sec" id="categorias">
+  <div class="sec-inner">
+    <div class="cats-head">
+      <div class="reveal">
+        <div class="sec-label">Categorías</div>
+        <h2 class="sec-h2">¿Qué estás <em>buscando?</em></h2>
+      </div>
+      <a href="#" class="link-arrow reveal d1">Ver todo &rarr;</a>
+    </div>
+    <div class="cats-grid">
+      <a href="#" class="cat-card reveal" style="background:#2C2C3A;">
+        <div class="cat-bg" style="background:linear-gradient(135deg,#3A3550,#5A4E80);">🛏️</div>
+        <div class="cat-info"><strong>Sommiers</strong><span>Todas las medidas</span></div>
+      </a>
+      <a href="#" class="cat-card reveal d1" style="background:#2A1F1A;">
+        <div class="cat-bg" style="background:linear-gradient(135deg,#3D2A1E,#6B4A35);">😴</div>
+        <div class="cat-info"><strong>Colchones</strong><span>Espuma y resortes</span></div>
+      </a>
+      <a href="#" class="cat-card reveal d2" style="background:#1A2A1F;">
+        <div class="cat-bg" style="background:linear-gradient(135deg,#1E3828,#2D5A3D);">🛋️</div>
+        <div class="cat-info"><strong>Sofás & Living</strong><span>Esquineros y sillones</span></div>
+      </a>
+      <a href="#" class="cat-card reveal d3" style="background:#2A251A;">
+        <div class="cat-bg" style="background:linear-gradient(135deg,#3A3018,#6B5A2A);">🪑</div>
+        <div class="cat-info"><strong>Respaldos</strong><span>Capitoné y lisos</span></div>
+      </a>
+      <a href="#" class="cat-card reveal d4" style="background:#1A2030;">
+        <div class="cat-bg" style="background:linear-gradient(135deg,#1E2840,#2D4060);">🏕️</div>
+        <div class="cat-info"><strong>Bauleras</strong><span>Con cajones</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="sec prods-sec" id="productos">
+  <div class="sec-inner">
+    <div class="prods-head">
+      <div class="reveal">
+        <div class="sec-label">Más elegidos</div>
+        <h2 class="sec-h2">Los que más se <em>venden</em></h2>
+      </div>
+      <div class="prods-filters reveal d1">
+        <button class="filter-pill active">Todos</button>
+        <button class="filter-pill">Sommiers</button>
+        <button class="filter-pill">Colchones</button>
+        <button class="filter-pill">Sofás</button>
+      </div>
+    </div>
+    <div class="prods-grid">
+
+      <div class="prod-card reveal" onclick="location.href='blessing-producto.html'">
+        <div class="prod-img" style="background:linear-gradient(135deg,#E8DDD5,#C4B0A0);">
+          <div class="prod-img-inner">🛏️</div>
+          <span class="badge badge-naranja">🟠 Naranja</span>
+        </div>
+        <div class="prod-body">
+          <span class="prod-cat">Sommier conjunto</span>
+          <div class="prod-name">Coral 2 Plazas + Base 140×190 + 2 Almohadas</div>
+          <div class="cuotas">
+            <div class="cuotas-badge">NARANJA<br>12x</div>
+            <div>
+              <div class="cuotas-num">$81.480 / mes</div>
+              <div class="cuotas-desc">sin interés · total $977.761</div>
+            </div>
+          </div>
+          <div class="price-row">
+            <span class="price">$977.761</span>
+            <span class="price-was">$1.358.001</span>
+            <span class="disc">−28%</span>
+          </div>
+          <div class="transf-price">💸 $684.433 con transferencia</div>
+          <button class="btn-add" onclick="event.stopPropagation();addToCart(this,'coral','Sommier Coral 2 Plazas',977761,'2 Plazas 140×190','Gris Oxford','🛏️')">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal d1" onclick="location.href='blessing-producto.html'">
+        <div class="prod-img" style="background:linear-gradient(135deg,#D5DDE8,#A8B8CC);">
+          <div class="prod-img-inner">😴</div>
+          <span class="badge badge-top">⭐ Top</span>
+        </div>
+        <div class="prod-body">
+          <span class="prod-cat">Sommier queen</span>
+          <div class="prod-name">Zafiro Queen + Base 160×200 + 2 Almohadas</div>
+          <div class="cuotas">
+            <div class="cuotas-badge">NARANJA<br>12x</div>
+            <div>
+              <div class="cuotas-num">$71.669 / mes</div>
+              <div class="cuotas-desc">sin interés · total $860.031</div>
+            </div>
+          </div>
+          <div class="price-row">
+            <span class="price">$860.031</span>
+            <span class="price-was">$1.194.488</span>
+            <span class="disc">−28%</span>
+          </div>
+          <div class="transf-price">💸 $602.022 con transferencia</div>
+          <button class="btn-add" onclick="event.stopPropagation();addToCart(this,'zafiro','Sommier Zafiro Queen',860031,'Queen 160×200','Gris Oxford','😴')">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal d2" onclick="location.href='blessing-producto.html'">
+        <div class="prod-img" style="background:linear-gradient(135deg,#D5E8D8,#A0C4A8);">
+          <div class="prod-img-inner">🛋️</div>
+          <span class="badge badge-nuevo">Nuevo</span>
+        </div>
+        <div class="prod-body">
+          <span class="prod-cat">Sofá cama</span>
+          <div class="prod-name">Sofá Cama Lenny — Producción Propia</div>
+          <div class="cuotas">
+            <div class="cuotas-badge">NARANJA<br>12x</div>
+            <div>
+              <div class="cuotas-num">$54.022 / mes</div>
+              <div class="cuotas-desc">sin interés · total $648.268</div>
+            </div>
+          </div>
+          <div class="price-row">
+            <span class="price">$648.268</span>
+            <span class="price-was">$900.372</span>
+            <span class="disc">−28%</span>
+          </div>
+          <div class="transf-price">💸 $453.788 con transferencia</div>
+          <button class="btn-add" onclick="event.stopPropagation();addToCart(this,'lenny','Sofá Cama Lenny',648268,'Estándar','Gris Oxford','🛋️')">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal d3" onclick="location.href='blessing-producto.html'">
+        <div class="prod-img" style="background:linear-gradient(135deg,#E8E0D5,#C8B89A);">
+          <div class="prod-img-inner">🪑</div>
+          <span class="badge badge-off">−28%</span>
+        </div>
+        <div class="prod-body">
+          <span class="prod-cat">Respaldo</span>
+          <div class="prod-name">Respaldo Capitoné Cuadrado Tela Pana — todas las medidas</div>
+          <div class="cuotas">
+            <div class="cuotas-badge">NARANJA<br>12x</div>
+            <div>
+              <div class="cuotas-num">$9.525 / mes</div>
+              <div class="cuotas-desc">sin interés · total $114.299</div>
+            </div>
+          </div>
+          <div class="price-row">
+            <span class="price">$114.299</span>
+            <span class="price-was">$158.748</span>
+            <span class="disc">−28%</span>
+          </div>
+          <div class="transf-price">💸 $80.009 con transferencia</div>
+          <button class="btn-add" onclick="event.stopPropagation();addToCart(this,'respaldo','Respaldo Capitoné Cuadrado',114299,'Estándar','Gris Oxford','🪑')">Agregar al carrito</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NARANJA SECTION -->
+<section class="naranja-sec" id="naranja-sec">
+  <div class="naranja-inner">
+    <div class="naranja-content reveal">
+      <div class="sec-label">Financiación exclusiva</div>
+      <h2 class="naranja-h">Tu sommier ideal,<br><em>hoy mismo,</em><br>en cuotas fijas</h2>
+      <p class="naranja-p">Con Tarjeta Naranja tenés la financiación más cómoda del mercado. Sin recargo, sin letra chica. El descanso que merecés con el plan de pagos que se adapta a vos.</p>
+      <a href="#productos" class="btn-gold">Ver sommiers →</a>
+    </div>
+    <div class="cuotas-cards reveal d1">
+      <div class="cuota-card">
+        <div class="cuota-n">3</div>
+        <div class="cuota-label">cuotas sin interés</div>
+      </div>
+      <div class="cuota-card">
+        <div class="cuota-n">6</div>
+        <div class="cuota-label">cuotas sin interés</div>
+      </div>
+      <div class="cuota-card">
+        <div class="cuota-n">9</div>
+        <div class="cuota-label">cuotas sin interés</div>
+      </div>
+      <div class="cuota-card highlight">
+        <div class="cuota-n">12</div>
+        <div class="cuota-label">EXCLUSIVO BLESSING</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec test-sec">
+  <div class="sec-inner">
+    <div class="reveal" style="margin-bottom:40px">
+      <div class="sec-label">Opiniones reales</div>
+      <h2 class="sec-h2">Más de 5000 familias<br>ya <em>eligieron</em> Blessing</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Llegó el sommier en 4 días a Rosario, bien embalado y me lo armaron en el momento. Una calidad increíble por ese precio.</p>
+        <div class="test-footer">
+          <div class="test-av a">MG</div>
+          <div>
+            <div class="test-name">María G.</div>
+            <div class="test-meta">Rosario, Santa Fe</div>
+            <span class="test-prod-tag">Conjunto Coral 2 Plazas</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal d1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Lo compré en 12 cuotas con Naranja y me salió muy cómodo. La calidad es mucho mejor de lo que esperaba. 100% recomendable.</p>
+        <div class="test-footer">
+          <div class="test-av b">LR</div>
+          <div>
+            <div class="test-name">Lucas R.</div>
+            <div class="test-meta">Córdoba Capital</div>
+            <span class="test-prod-tag">Sofá Cama Lenny</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal d2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">La atención por WhatsApp fue inmediata. Me ayudaron a elegir el colchón ideal para mis hijos y el envío fue gratis a Mendoza.</p>
+        <div class="test-footer">
+          <div class="test-av c">CP</div>
+          <div>
+            <div class="test-name">Carolina P.</div>
+            <div class="test-meta">Mendoza</div>
+            <span class="test-prod-tag">Cucheta + 2 Colchones Gani</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIAS -->
+<section class="garantias-sec">
+  <div class="garantias-grid">
+    <div class="garantia reveal">
+      <span class="gar-icon">🏭</span>
+      <div class="gar-title">Producción propia</div>
+      <p class="gar-desc">Fabricamos en Córdoba. Sin intermediarios, calidad garantizada directo del taller a tu casa.</p>
+    </div>
+    <div class="garantia reveal d1">
+      <span class="gar-icon">🔄</span>
+      <div class="gar-title">Cambio en 30 días</div>
+      <p class="gar-desc">Si no estás conforme por cualquier motivo, lo cambiamos. Sin vueltas, sin preguntas.</p>
+    </div>
+    <div class="garantia reveal d2">
+      <span class="gar-icon">🚚</span>
+      <div class="gar-title">Envío gratis</div>
+      <p class="gar-desc">A todo el país, con seguimiento. Coordinamos la entrega con vos por WhatsApp.</p>
+    </div>
+    <div class="garantia reveal d3">
+      <span class="gar-icon">💬</span>
+      <div class="gar-title">Atención de verdad</div>
+      <p class="gar-desc">Siempre habla una persona real. Respondemos en minutos por WhatsApp, sin bots.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">
+        <span class="logo-b">Blessing</span>
+        <span class="logo-h" style="color:rgba(255,255,255,.4)">Hogar</span>
+      </div>
+      <p>Especialistas en sommiers, colchones y muebles para el hogar. Producción propia desde Córdoba, Argentina.</p>
+      <div class="soc">
+        <a href="#" class="soc-btn">f</a>
+        <a href="#" class="soc-btn">✦</a>
+        <a href="#" class="soc-btn">▶</a>
+      </div>
+    </div>
+    <div>
+      <h5>Productos</h5>
+      <ul>
+        <li><a href="#">Sommiers</a></li>
+        <li><a href="#">Colchones</a></li>
+        <li><a href="#">Respaldos</a></li>
+        <li><a href="#">Sofás & Living</a></li>
+        <li><a href="#">Bauleras</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Ayuda</h5>
+      <ul>
+        <li><a href="#">Cómo comprar</a></li>
+        <li><a href="#">Seguimiento</a></li>
+        <li><a href="#">Garantía y cambios</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <ul class="foot-contact">
+        <li><span>📍</span> Nazareno Bordi 61, Córdoba</li>
+        <li><span>📞</span> 351 642-0999</li>
+        <li><span>✉️</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f7e4eff5e0f2c1e3ede4f2f2e8efe6e9eee6e0f3afe2eeecafe0f3">[email&#160;protected]</a></li>
+        <li><span>🕐</span> L–V 9–18hs · Sáb 9–13hs</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2025 Blessing Hogar — CUIT 30-71794747-5</span>
+    <div class="pay-methods">
+      <span class="pay-tag">NARANJA</span>
+      <span class="pay-tag">VISA</span>
+      <span class="pay-tag">MASTERCARD</span>
+      <span class="pay-tag">MOBBEX</span>
+      <span class="pay-tag">MERCADO PAGO</span>
+      <span class="pay-tag">TRANSFERENCIA</span>
+    </div>
+    <a href="#" style="color:inherit;text-decoration:none;">Defensa del consumidor</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5493516420999?text=Hola%20Blessing!%20Quiero%20consultar%20un%20producto" class="wa" target="_blank" aria-label="WhatsApp">💬</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Drawer
+const overlay = document.getElementById('drawerOverlay');
+document.getElementById('burgerBtn').onclick = () => overlay.classList.add('open');
+document.getElementById('drawerClose').onclick = () => overlay.classList.remove('open');
+overlay.addEventListener('click', e => { if(e.target === overlay) overlay.classList.remove('open'); });
+
+// Scroll reveal
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Filter pills
+document.querySelectorAll('.filter-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+// Add to cart — usa BlessingCart global de cart.js
+function addToCart(btn, id, name, price, medida, color, emoji) {
+  BlessingCart.add({ id, name, price, medida, color, emoji });
+  btn.textContent = '✓ Agregado';
+  btn.style.background = 'var(--sage)';
+  setTimeout(() => {
+    btn.textContent = 'Agregar al carrito';
+    btn.style.background = '';
+  }, 2000);
+}
+</script>
+
+<!-- CART SYSTEM -->
+<script src="cart.js"></script>
+
+</body>
+</html>
