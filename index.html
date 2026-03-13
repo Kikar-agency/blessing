@@ -1176,6 +1176,10 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // Filter pills
 document.querySelectorAll('.filter-pill').forEach(btn => {
   btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
 
 // Add to cart — usa BlessingCart global de cart.js
 function addToCart(btn, id, name, price, medida, color, emoji) {
